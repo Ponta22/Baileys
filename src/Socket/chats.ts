@@ -526,7 +526,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 			tag: 'iq',
 			attrs: {
 			  target: jid,
-				to: WABinary_1.S_WHATSAPP_NET,
+				to: S_WHATSAPP_NET,
 				type: 'get',
 				xmlns: 'w:profile:picture'
 			},
