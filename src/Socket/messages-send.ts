@@ -19,7 +19,7 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 		options: axiosOptions,
 		patchMessageBeforeSending,
 	} = config
-	const sock = makeNewsLetterSocket(config)
+	const sock = makeNewsletterSocket(config)
 	const {
 		ev,
 		authState,
