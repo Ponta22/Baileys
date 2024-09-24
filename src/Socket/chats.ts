@@ -204,13 +204,14 @@ export const makeChatsSocket = (config: SocketConfig) => {
 		}
 	}
 
-	/** update the profile picture for yourself or a group */
+/** update the profile picture for yourself or a group */
 	const updateProfilePicture = async(jid: string, content: WAMediaUpload) => {
 		const { img } = await generateProfilePicture(content)
 		await query({
 			tag: 'iq',
 			attrs: {
-				to: jidNormalizedUser(jid),
+				target: jid!,
+				to: S_WHATSAPP_NET,
 				type: 'set',
 				xmlns: 'w:profile:picture'
 			},
@@ -229,7 +230,8 @@ export const makeChatsSocket = (config: SocketConfig) => {
 		await query({
 			tag: 'iq',
 			attrs: {
-				to: jidNormalizedUser(jid),
+				target: jid!,
+				to: S_WHATSAPP_NET,
 				type: 'set',
 				xmlns: 'w:profile:picture'
 			}
